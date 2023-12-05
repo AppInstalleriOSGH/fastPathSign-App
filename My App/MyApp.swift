@@ -4,7 +4,16 @@ import SwiftUI
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("fastPathSign")
+            Button {
+                do {
+                    try FileManager.default.copyItem(atPath: , toPath: )
+                    //fastPathSign
+                } catch {
+                    print(error)
+                }
+            } label: {
+                Text("fastPathSign")
+            }
         }
     }
 }
