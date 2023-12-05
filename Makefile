@@ -3,14 +3,14 @@ ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
 
-TOOL_NAME = trollstorehelper
+TOOL_NAME = fastPathSign
 
-trollstorehelper_FILES = $(wildcard *.m) $(wildcard *.c)
-trollstorehelper_CFLAGS = -fobjc-arc $(shell pkg-config --cflags libcrypto) -Iexternal/include
-trollstorehelper_LDFLAGS = -Lexternal/lib -lcrypto -lchoma
-trollstorehelper_CODESIGN_FLAGS = --entitlements entitlements.plist
-trollstorehelper_INSTALL_PATH = /usr/local/bin
-trollstorehelper_FRAMEWORKS = CoreTelephony
-trollstorehelper_PRIVATE_FRAMEWORKS = SpringBoardServices BackBoardServices MobileContainerManager
+fastPathSign_FILES = $(wildcard *.m) $(wildcard *.c)
+fastPathSign_CFLAGS = -fobjc-arc $(shell pkg-config --cflags libcrypto) -Iexternal/include
+fastPathSign_LDFLAGS = -Lexternal/lib -lcrypto -lchoma
+fastPathSign_CODESIGN_FLAGS = -Sentitlements.plist
+fastPathSign_INSTALL_PATH = /usr/local/bin
+fastPathSign_FRAMEWORKS = CoreTelephony
+fastPathSign_PRIVATE_FRAMEWORKS = SpringBoardServices BackBoardServices MobileContainerManager
 
 include $(THEOS_MAKE_PATH)/tool.mk
