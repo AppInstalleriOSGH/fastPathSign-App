@@ -5,10 +5,6 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources: [My App, Resources]
-    dependencies:
-      linkType: static
-      sdk: external/lib/libchoma.a
-      sdk: external/lib/libcrypto.a
     settings:
       base:
         INFOPLIST_FILE: Resources/Info.plist
