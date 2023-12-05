@@ -14,7 +14,6 @@ jobs:
      - name: Build App
        run: |
             ls $(pkg-config --cflags libcrypto)
-            ls $(pkg-config --cflags libcrypto)/openssl
             Scheme="fastPathSign"
             XCProject="fastPathSign.xcodeproj"
             xcodebuild -jobs $(sysctl -n hw.ncpu) -project "$XCProject" -scheme "$Scheme" -configuration Release -arch arm64 -sdk iphoneos -derivedDataPath "$TMPDIR/App" CODE_SIGNING_ALLOWED=NO DSTROOT=$AppTMP/install ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO OTHER_CFLAGS="-fobjc-arc -I$(pkg-config --cflags libcrypto) -Iexternal/include"
