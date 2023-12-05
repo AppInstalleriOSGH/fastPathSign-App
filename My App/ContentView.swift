@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var LogItems: [String.SubSequence] = [IsSupported() ? "Ready!" : "Unsupported", "iOS: \(GetiOSBuildID())"]
+    @State var LogItems: [String.SubSequence] = ["Ready!"]
     var body: some View {
         VStack {
             ScrollView {
