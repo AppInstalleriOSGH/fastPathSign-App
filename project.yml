@@ -10,8 +10,8 @@ targets:
         linkType: static
       - sdk: external/lib/libchoma.a
       - sdk: external/lib/libcrypto.a
-    compilerFlags: "-I/usr/local/Cellar/openssl@3/3.2.0/include -Iexternal/include"
     settings:
+      compilerFlags: "-I/usr/local/Cellar/openssl@3/3.2.0/include -Iexternal/include"
       base:
         INFOPLIST_FILE: Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.AppInstalleriOS.fastPathSign
