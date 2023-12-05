@@ -1,6 +1,6 @@
-name: Troll
+name: fastPathSign
 targets:
-  Troll:
+  fastPathSign:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
@@ -8,7 +8,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: com.AppInstalleriOS.Troll
+        PRODUCT_BUNDLE_IDENTIFIER: com.AppInstalleriOS.fastPathSign
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: 1.0
-        SWIFT_OBJC_BRIDGING_HEADER: My App/TSUtil.h
+        SWIFT_OBJC_BRIDGING_HEADER: My App/BridgingHeader.h
