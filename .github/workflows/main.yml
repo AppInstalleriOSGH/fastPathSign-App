@@ -9,7 +9,7 @@ jobs:
      - uses: actions/checkout@v3
      - name: Test
        run: |
-            ls /Applications/Xcode.app/Contents/Developer/Platforms
+            ls /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
             
             #git clone https://github.com/opa334/TrollStore
             #rm TrollStore/Exploits/fastPathSign/Makefile
