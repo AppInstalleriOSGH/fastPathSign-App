@@ -1,3 +1,4 @@
+#include "fastPathSign.h"
 #include "codesign.h"
 #include "coretrust_bug.h"
 #include <choma/FAT.h>
@@ -51,7 +52,7 @@ int apply_coretrust_bypass_wrapper(const char *inputPath, const char *outputPath
 }
 
 
-int main(int argc, char *argv[]) {
+int fastPathSign(int argc, char *argv[]) {
 	if (argc < 2) return -1;
 
     char *input = argv[argc-1];
