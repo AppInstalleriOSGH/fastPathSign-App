@@ -7,17 +7,7 @@ jobs:
     runs-on: macos-latest
     steps:
      - uses: actions/checkout@v3
-     - name: Test
-       run: pkg-config --cflags libcrypto
-     - name: Install Theos
-       uses: Randomblock1/theos-action@v1.3           
-     - name: Build fastPathSign
-       run: make
-     - name: Git Push
-       run: |
-            cp .theos/obj/debug/fastPathSign fastPathSign
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git add fastPathSign
-            git commit -m "Built fastPathSign"
-            git push
+     - name: Install xcodegen
+       run: brew install xcodegen
+     - name: Generate XCProject
+       run: xcodegen generate
