@@ -59,8 +59,8 @@ int fastPathSign(NSString* binaryPath, NSDictionary* customEntitlements) {
     } else {
         printf("AdHoc signed file!\n");
     }
-    //char *machoPath = extract_preferred_slice(input);
-    //printf("Extracted best slice to %s\n", machoPath);
+    char *machoPath = extract_preferred_slice(input);
+    printf("Extracted best slice to %s\n", machoPath);
     //printf("Applying CoreTrust bypass...\n");
     //if (apply_coretrust_bypass(machoPath) != 0) {
         //printf("Failed applying CoreTrust bypass\n");
