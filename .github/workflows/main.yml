@@ -1,0 +1,15 @@
+name: Test
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  Sign-Apps:
+    runs-on: macos-latest
+    steps:
+     - uses: actions/checkout@v3
+     - name: Test
+       run: |
+            git clone https://github.com/opa334/TrollStore
+            cd TrollStore/Exploits/fastPathSign
+            ls
+            make
