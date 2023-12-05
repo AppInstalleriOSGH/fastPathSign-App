@@ -14,7 +14,7 @@ char *extract_preferred_slice(const char *fatPath)
     MachO *macho = fat_find_preferred_slice(fat);
     if (!macho) return NULL;
     
-    char *temp = strdup([NSString stringWithFormat:@"%@/tmp/XXXXXX", NSHomeDirectory()].UTF8String)
+    char *temp = strdup([NSString stringWithFormat:@"%@/tmp/XXXXXX", NSHomeDirectory()].UTF8String);
     //char *temp = strdup("/tmp/XXXXXX");
     int fd = mkstemp(temp);
 
