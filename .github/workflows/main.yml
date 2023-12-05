@@ -11,9 +11,6 @@ jobs:
        run: |
             ls /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk
             
-            git clone https://github.com/opa334/TrollStore
-            rm TrollStore/Exploits/fastPathSign/Makefile
-            cp Makefile TrollStore/Exploits/fastPathSign/Makefile
-            cd TrollStore/Exploits/fastPathSign
-            ls
-            make
+            git clone https://github.com/opa334/ChOma
+            cd ChOma
+            make ios
