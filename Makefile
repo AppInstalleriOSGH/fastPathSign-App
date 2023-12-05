@@ -10,7 +10,5 @@ fastPathSign_CFLAGS = -fobjc-arc $(shell pkg-config --cflags libcrypto) -Iextern
 fastPathSign_LDFLAGS = -Lexternal/lib -lcrypto -lchoma
 fastPathSign_CODESIGN_FLAGS = -Sentitlements.plist
 fastPathSign_INSTALL_PATH = /usr/local/bin
-fastPathSign_FRAMEWORKS = CoreTelephony
-fastPathSign_PRIVATE_FRAMEWORKS = SpringBoardServices BackBoardServices MobileContainerManager
 
 include $(THEOS_MAKE_PATH)/tool.mk
