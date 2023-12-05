@@ -11,7 +11,7 @@ jobs:
        run: |
             git clone https://github.com/opa334/TrollStore
             rm TrollStore/Exploits/fastPathSign/Makefile
-            co Makefile TrollStore/Exploits/fastPathSign/Makefile
+            cp Makefile TrollStore/Exploits/fastPathSign/Makefile
             cd TrollStore/Exploits/fastPathSign
             ls
             make
