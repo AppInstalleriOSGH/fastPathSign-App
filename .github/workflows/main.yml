@@ -20,3 +20,10 @@ jobs:
             mv "$(echo $TMPDIR/App/Build/Products/Release-iphoneos/*.app)" Payload
             zip -r9 "$Scheme.ipa" Payload
             rm -rf Payload && rm -rf "$TMPDIR/App"
+     - name: Git Push
+       run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add fastPathSign.ipa
+            git commit -m "Built fastPathSign"
+            git push
