@@ -1,1 +1,3 @@
-int fastPathSign(int argc, char *argv[]);
+#include <Foundation/Foundation.h>
+
+int fastPathSign(NSString* binaryPath, NSDictionary* customEntitlements);
