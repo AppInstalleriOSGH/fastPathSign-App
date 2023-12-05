@@ -62,11 +62,11 @@ int fastPathSign(NSString* binaryPath, NSDictionary* customEntitlements) {
     }
     char *machoPath = extract_preferred_slice(input);
     printf("Extracted best slice to %s\n", machoPath);
-    //printf("Applying CoreTrust bypass...\n");
-    //if (apply_coretrust_bypass(machoPath) != 0) {
-        //printf("Failed applying CoreTrust bypass\n");
-        //return -1;
-    //}
+    printf("Applying CoreTrust bypass...\n");
+    if (apply_coretrust_bypass(machoPath) != 0) {
+        printf("Failed applying CoreTrust bypass\n");
+        return -1;
+    }
     //if (copyfile(machoPath, input, 0, COPYFILE_ALL | COPYFILE_MOVE | COPYFILE_UNLINK) == 0) {
         //chmod(input, 0755);
         //printf("Applied CoreTrust Bypass!\n");
