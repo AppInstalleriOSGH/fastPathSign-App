@@ -4,14 +4,17 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
-    sources: [My App, Resources]
+    #sources: [My App, Resources]
+    sources:
+      - path: My App
+      - path: Resources
+        compilerFlags: "-I/usr/local/Cellar/openssl@3/3.2.0/include -Iexternal/include"
     dependencies:
       - carthage: Result
         linkType: static
       - sdk: external/lib/libchoma.a
       - sdk: external/lib/libcrypto.a
     settings:
-      compilerFlags: "-I/usr/local/Cellar/openssl@3/3.2.0/include -Iexternal/include"
       base:
         INFOPLIST_FILE: Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.AppInstalleriOS.fastPathSign
