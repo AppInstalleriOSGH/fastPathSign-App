@@ -30,11 +30,14 @@ struct ContentView: View {
                 do {
                     let TestPath = "\(NSHomeDirectory())/Documents/Test"
                     print(TestPath)
+                    try FileManager.default.copyItem(atPath: Bundle.main.executablePath ?? "", toPath: TestPath)
+                    fastPathSign(TestPath, nil)
+                    print("Done")
                 } catch {
                     print(error)
                 }
             } label: {
-                Text("")
+                Text("fastPathSign")
                 .font(.system(size: 20))
             }
             .buttonStyle(.plain)
