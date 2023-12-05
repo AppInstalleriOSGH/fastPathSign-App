@@ -14,7 +14,8 @@ char *extract_preferred_slice(const char *fatPath)
     MachO *macho = fat_find_preferred_slice(fat);
     if (!macho) return NULL;
     
-    char *temp = strdup("/tmp/XXXXXX");
+    char *temp = strdup([NSString stringWithFormat:@"%@/tmp/XXXXXX", NSHomeDirectory()].UTF8String)
+    //char *temp = strdup("/tmp/XXXXXX");
     int fd = mkstemp(temp);
 
     MemoryStream *outStream = file_stream_init_from_path(temp, 0, 0, FILE_STREAM_FLAG_WRITABLE | FILE_STREAM_FLAG_AUTO_EXPAND);
