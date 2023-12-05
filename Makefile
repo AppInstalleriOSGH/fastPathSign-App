@@ -1,4 +1,6 @@
-TARGET = fastPathSign
+TARGET = fastPathSign:iphone
+
+#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk
 
 CC = clang
 
