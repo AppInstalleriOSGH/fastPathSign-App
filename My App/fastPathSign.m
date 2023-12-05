@@ -67,13 +67,13 @@ int fastPathSign(NSString* binaryPath, NSDictionary* customEntitlements) {
         printf("Failed applying CoreTrust bypass\n");
         return -1;
     }
-    //if (copyfile(machoPath, input, 0, COPYFILE_ALL | COPYFILE_MOVE | COPYFILE_UNLINK) == 0) {
-        //chmod(input, 0755);
-        //printf("Applied CoreTrust Bypass!\n");
-    //} else {
-        //perror("copyfile");
-        //return -1;
-    //}
-    //free(machoPath);
+    if (copyfile(machoPath, input, 0, COPYFILE_ALL | COPYFILE_MOVE | COPYFILE_UNLINK) == 0) {
+        chmod(input, 0755);
+        printf("Applied CoreTrust Bypass!\n");
+    } else {
+        perror("copyfile");
+        return -1;
+    }
+    free(machoPath);
     return 0;
 }
