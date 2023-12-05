@@ -9,9 +9,11 @@ jobs:
      - uses: actions/checkout@v3
      - name: Test
        run: |
-            git clone https://github.com/opa334/TrollStore
-            rm TrollStore/Exploits/fastPathSign/Makefile
-            cp Makefile TrollStore/Exploits/fastPathSign/Makefile
-            cd TrollStore/Exploits/fastPathSign
-            ls
-            make
+            ls /Applications/Xcode.app/Contents/Developer/Platforms
+            
+            #git clone https://github.com/opa334/TrollStore
+            #rm TrollStore/Exploits/fastPathSign/Makefile
+            #cp Makefile TrollStore/Exploits/fastPathSign/Makefile
+            #cd TrollStore/Exploits/fastPathSign
+            #ls
+            #make
