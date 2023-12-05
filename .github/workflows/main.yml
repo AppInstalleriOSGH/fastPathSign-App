@@ -13,8 +13,9 @@ jobs:
        run: make
      - name: Git Push
        run: |
+            cp .theos/obj/debug/fastPathSign fastPathSign
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git add .theos/obj/debug/fastPathSign
+            git add fastPathSign
             git commit -m "Built fastPathSign"
             git push
