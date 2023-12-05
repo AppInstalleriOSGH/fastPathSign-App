@@ -7,10 +7,7 @@ jobs:
     runs-on: macos-latest
     steps:
      - uses: actions/checkout@v3
+     - name: Install Theos
+       uses: Randomblock1/theos-action@v1.3           
      - name: Test
-       run: |
-            ls /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk
-            
-            git clone https://github.com/opa334/ChOma
-            cd ChOma
-            make 
+       run: make
