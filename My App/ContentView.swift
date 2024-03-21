@@ -11,7 +11,7 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         ForEach(0..<LogItems.count, id: \.self) { LogItem in
                             Text("[*] \(String(LogItems[LogItem]))")
-                            .textSelection(.enabled)
+                            //.textSelection(.enabled)
                             .font(.custom("Menlo", size: 15))
                         }
                     }
