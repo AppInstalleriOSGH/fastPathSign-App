@@ -2,8 +2,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State var LogItems: [String.SubSequence] = ["Ready!"]
+    @State var FilePath = ""
     var body: some View {
         VStack {
+            TextField("File Path", text: $FilePath)
             ScrollView {
                 ScrollViewReader { scroll in
                     VStack(alignment: .leading) {
@@ -27,15 +29,8 @@ struct ContentView: View {
             .background(Color(UIColor.systemGray6))
             .cornerRadius(20)          
             Button {
-                do {
-                    let TestPath = "\(NSHomeDirectory())/Documents/Test"
-                    print(TestPath)
-                    try FileManager.default.copyItem(atPath: Bundle.main.executablePath ?? "", toPath: TestPath)
-                    fastPathSign(TestPath, nil)
-                    print("Done")
-                } catch {
-                    print(error)
-                }
+                fastPathSign(FilePath, nil)
+                print("Done")
             } label: {
                 Text("fastPathSign")
                 .font(.system(size: 20))
@@ -44,6 +39,7 @@ struct ContentView: View {
             .frame(width: UIScreen.main.bounds.width - 80, height: 70)
             .background(Color(UIColor.systemGray6))
             .cornerRadius(20)
+            .disabled(!FileManager.default.fileExists(atPath: FilePath))
         }
     }
     func FetchLog() {
