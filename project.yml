@@ -3,7 +3,7 @@ targets:
   fastPathSign:
     type: application
     platform: iOS
-    deploymentTarget: "16.0"
+    deploymentTarget: "14.0"
     sources: [My App, Resources]
     settings:
       base:
